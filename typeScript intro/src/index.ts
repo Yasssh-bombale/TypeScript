@@ -75,4 +75,30 @@ const demoObj: newDemo = {
   },
 };
 demoObj.func(10, 10);
-console.log("blah");
+
+// *----------------------------->> functions <<-------------------------------
+
+type functionType = (n: number, m: number, l?: number) => number;
+
+const oneFunc: functionType = (n, m, l) => {
+  if (typeof l === "undefined") return n * m;
+  return n * m * l;
+};
+console.log("oneFunc --> ", oneFunc(5, 5, 5));
+
+//* -------------------------->> rest operator << ----------------------------------
+
+//want to accept n numbers in array as paramter
+
+const hero = (...m: number[]): number[] => {
+  return m;
+};
+
+console.log(hero(10, 20, 30, 40, 50));
+
+// using type;
+type heroType = (...m: number[]) => number[];
+
+const newHero: heroType = (...m) => {
+  return m;
+};

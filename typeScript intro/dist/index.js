@@ -38,4 +38,18 @@ const demoObj = {
     },
 };
 demoObj.func(10, 10);
-console.log("blah");
+const oneFunc = (n, m, l) => {
+    if (typeof l === "undefined")
+        return n * m;
+    return n * m * l;
+};
+console.log("oneFunc --> ", oneFunc(5, 5, 5));
+//* -------------------------->> rest operator << ----------------------------------
+//want to accept n numbers in array as paramter
+const hero = (...m) => {
+    return m;
+};
+console.log(hero(10, 20, 30, 40, 50));
+const newHero = (...m) => {
+    return m;
+};
