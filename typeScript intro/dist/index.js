@@ -53,3 +53,21 @@ console.log(hero(10, 20, 30, 40, 50));
 const newHero = (...m) => {
     return m;
 };
+const getData = (product) => {
+    product.name = "odohfoh";
+    // product.id="jhihuogg"   //can not able to access because it is read only
+    console.log(product);
+};
+const newObj = {
+    name: "yash",
+    image: "idhihu",
+    isAvailable: true,
+    price: 2939,
+    id: "ihsihgiuh",
+};
+getData(newObj);
+//
+// type themeMode = "dark" | "light";
+// const mode: themeMode = "dark";
+// if (mode === "dark" || mode === "light") {
+// }

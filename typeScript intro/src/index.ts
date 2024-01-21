@@ -102,3 +102,38 @@ type heroType = (...m: number[]) => number[];
 const newHero: heroType = (...m) => {
   return m;
 };
+
+// ************************** functions with objects ******************
+
+interface productObj {
+  name: string;
+  price: number;
+  isAvailable: boolean;
+  image: string;
+  readonly id: String;
+}
+
+type getData = (product: productObj) => void;
+
+const getData: getData = (product) => {
+  product.name = "odohfoh";
+  // product.id="jhihuogg"   //can not able to access because it is read only
+  console.log(product);
+};
+
+const newObj = {
+  name: "yash",
+  image: "idhihu",
+  isAvailable: true,
+  price: 2939,
+  id: "ihsihgiuh",
+};
+
+getData(newObj);
+
+//
+// type themeMode = "dark" | "light";
+
+// const mode: themeMode = "dark";
+// if (mode === "dark" || mode === "light") {
+// }
