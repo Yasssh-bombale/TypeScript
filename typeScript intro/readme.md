@@ -4,7 +4,7 @@
 tsc - init;
 ```
 
-Note: in config file to paths need to be add
+Note: in config file two paths need to be add
 
 <ul>
     <li> first => rootD:"{ add typescript files directory ex: src }" </li>
