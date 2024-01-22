@@ -132,3 +132,51 @@ form.onsubmit = (e) => {
 // const getData = (key: keyof personType) => {
 //   return person[key];
 // };
+//****************** Utility types */
+/*
+
+1) Partial<Type> //convert required properties to optional
+
+      type user = {
+        name: string;
+        email: string;
+      };
+
+suppose i need to create same type assetion but its properties are optional like name?:string;
+
+      type user2 = Partial<user>;
+*/
+/*
+2) Required<Type>   // converts optional properties to required;
+
+    type user = {
+      name?: string;
+      email?: string;
+    };
+    type user2 = Required<user>;
+
+*/
+/*
+
+3) Readonly<Type>
+
+  type user = {
+    name: string;
+    email: string;
+  };
+
+  const newUser: Readonly<user> = {
+    name: "yash",
+    email: "yash@gmail.com",
+  };
+
+*/
+// type orderInfo = {
+//   readonly id: string;
+//   user: string;
+//   city: string;
+//   state: string;
+//   zipCode: number;
+//   status: boolean;
+// };
+// type shipInfo = Pick<orderInfo, "id" | "city" | "user" | "zipCode">;
