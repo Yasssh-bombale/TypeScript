@@ -137,3 +137,84 @@ getData(newObj);
 // const mode: themeMode = "dark";
 // if (mode === "dark" || mode === "light") {
 // }
+
+// ***************************** >>  classes  << ******************************************************
+class player {
+  readonly id: string;
+  constructor(
+    public height: number,
+    private weight: number,
+    protected power: number
+  ) {
+    this.id = String(Math.random() * 100);
+  }
+  getMyweight() {
+    return this.weight;
+  }
+}
+class player2 extends player {
+  special: boolean;
+  constructor(height: number, weight: number, power: number, special: boolean) {
+    super(height, weight, power);
+    this.special = special;
+  }
+  getProtectedData() {
+    return this.power;
+  }
+}
+
+const player1 = new player(20, 30, 40);
+console.log(player1.getMyweight());
+console.log(player1.id);
+
+const player3 = new player2(10, 20, 30, true);
+
+console.log(player3.getProtectedData()); //now protected is accessible;
+
+// console.log(player1.weight);Property weight is private and only accessible within class player .
+// console.log(player1.power); Property power is protected and only accessible within class player and its subclasses.
+
+// *  [TypeAssertion] DOM --------------------------------------->>
+const h1 = document.querySelector("h1");
+
+// h1?.onclick()  typescript automatically add ? after h1?. because typescript says h1 is posibly null to overcome this sutuation below syntax is followed;
+
+const h2 = <HTMLElement>document.querySelector("h1");
+h2.onclick;
+
+const myImg = <HTMLImageElement>document.getElementById("myIMG");
+myImg.src;
+
+const form = <HTMLFormElement>document.getElementById("myForm");
+const input = <HTMLInputElement>document.querySelector("form > input");
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+
+  const val = Number(input.value);
+  console.log(typeof val);
+
+  const p = document.createElement("p");
+  const result = val + 25;
+
+  p.innerHTML = result.toLocaleString();
+  form.appendChild(p);
+};
+
+// interface personType {
+//   name: string;
+//   age: number;
+//   isEmployed: boolean;
+//   gender: boolean;
+// }
+
+// const person: personType = {
+//   name: "yash",
+//   age: 100,
+//   isEmployed: true,
+//   gender: true,
+// };
+
+// const getData = (key: keyof personType) => {
+//   return person[key];
+// };
