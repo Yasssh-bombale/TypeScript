@@ -117,66 +117,16 @@ form.onsubmit = (e) => {
     p.innerHTML = result.toLocaleString();
     form.appendChild(p);
 };
-// interface personType {
-//   name: string;
-//   age: number;
-//   isEmployed: boolean;
-//   gender: boolean;
-// }
-// const person: personType = {
-//   name: "yash",
-//   age: 100,
-//   isEmployed: true,
-//   gender: true,
-// };
-// const getData = (key: keyof personType) => {
-//   return person[key];
-// };
-//****************** Utility types */
-/*
-
-1) Partial<Type> //convert required properties to optional
-
-      type user = {
-        name: string;
-        email: string;
-      };
-
-suppose i need to create same type assetion but its properties are optional like name?:string;
-
-      type user2 = Partial<user>;
-*/
-/*
-2) Required<Type>   // converts optional properties to required;
-
-    type user = {
-      name?: string;
-      email?: string;
-    };
-    type user2 = Required<user>;
-
-*/
-/*
-
-3) Readonly<Type>
-
-  type user = {
-    name: string;
-    email: string;
-  };
-
-  const newUser: Readonly<user> = {
+const human = {
     name: "yash",
-    email: "yash@gmail.com",
-  };
-
-*/
-// type orderInfo = {
-//   readonly id: string;
-//   user: string;
-//   city: string;
-//   state: string;
-//   zipCode: number;
-//   status: boolean;
-// };
-// type shipInfo = Pick<orderInfo, "id" | "city" | "user" | "zipCode">;
+    age: 100,
+};
+const human2 = {
+    name: "yassshu",
+    age: 100,
+    email: "hero@gmail.com",
+};
+const funct = (n, m) => {
+    return { n, m };
+};
+const foo = funct(human, human2);

@@ -270,3 +270,54 @@ suppose i need to create same type assetion but its properties are optional like
 // };
 
 // type shipInfo = Pick<orderInfo, "id" | "city" | "user" | "zipCode">;
+
+//***************************** << Generics in TypeScript >> **********/
+
+/*
+
+const funct = <T>(n: T): T => {
+  let text: T;
+  return n;
+};
+const demo = funct(10);
+const demo1 = funct("hey");
+const demo2 = funct(true);
+
+type obj = {
+  name: string;
+  age: number;
+};
+
+const foo: obj = {
+  name: "yassshu",
+  age: 100,
+};
+const newFoo = funct<obj>(foo);
+console.log(newFoo.name); //yassshu
+*/
+
+type person = {
+  name: string;
+  age: number;
+};
+type person2 = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+const human: person = {
+  name: "yash",
+  age: 100,
+};
+const human2: person2 = {
+  name: "yassshu",
+  age: 100,
+  email: "hero@gmail.com",
+};
+
+const funct = <T, U extends T>(n: T, m: U): { n: T; m: U } => {
+  return { n, m };
+};
+
+const foo = funct<person, person2>(human, human2);
