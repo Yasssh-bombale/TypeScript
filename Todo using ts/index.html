@@ -12,14 +12,20 @@
 
       <form id="myForm">
         <div id="formContainer">
-          <input type="text" placeholder="enter todo" required />
+          <input id="todoInput" type="text" placeholder="enter todo" required />
           <button type="submit">Add</button>
         </div>
       </form>
 
-      <div class="todoContainer">
+      <div id="todoContainer">
         <p>No todo yet</p>
-      </div>
+        <!-- 
+          <div class="todo">
+          <input id="checkbox" type="checkbox" />
+          <input id="inputTodo" type="text" value="heyheyhey" />
+          <button id="delete">❌</button>
+        </div> 
+      --></div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>
